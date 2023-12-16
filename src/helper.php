@@ -28,7 +28,7 @@ function captcha($config = null)
  */
 function captcha_src($config = null): string
 {
-    return Route::buildUrl('/captcha' . ($config ? "/{$config}" : ''));
+  return Route::buildUrl('/captcha' . ($config ? "/{$config}" : ''));
 }
 
 /**
@@ -37,11 +37,11 @@ function captcha_src($config = null): string
  */
 function captcha_img($id = '', $domid = ''): string
 {
-    $src = captcha_src($id);
-  
-    $domid = empty($domid) ? $domid : "id='" . $domid . "'";
+  $src = captcha_src($id);
 
-    return "<img src='{$src}' alt='captcha' " . $domid . " onclick='this.src=\"{$src}?\"+Math.random();' />";
+  $domid = empty($domid) ? $domid : "id='" . $domid . "'";
+
+  return "<img src='{$src}' alt='captcha' " . $domid . " onclick='this.src=\"{$src}?\"+Math.random();' />";
 }
 
 /**
@@ -50,5 +50,5 @@ function captcha_img($id = '', $domid = ''): string
  */
 function captcha_check($value)
 {
-    return Captcha::check($value);
+  return Captcha::check($value);
 }
