@@ -48,7 +48,7 @@ function captcha_img($id = '', $domid = ''): string
  * @param string $value
  * @return bool
  */
-function captcha_check($value)
+function captcha_check($key, $value)
 {
-  return Captcha::check($value);
+  return Captcha::check($key, $value);
 }
